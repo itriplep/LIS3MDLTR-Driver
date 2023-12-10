@@ -33,6 +33,9 @@
 //--------------------------------------------------------------------------------------------------------
 // Constant and macro definitions
 //--------------------------------------------------------------------------------------------------------
+#define       X_ADDRESS_REG      ((uint8_t)0x28)      //!< Address of X register
+#define       Y_ADDRESS_REG      ((uint8_t)0x2A)      //!< Address of Y register
+#define       Z_ADDREDD_REG      ((uint8_t)0x2C)      //!< Address of Z register
 
 #define       DEFAULT_ADDRESS    ((uint8_t)0x3d)      //!< Default bus address
 
@@ -84,6 +87,12 @@ typedef enum interupt_status_t {
   ENABLE = 1 
 }interupt_status_t;
 
+typedef enum axis_t {
+  AXIS_X = X_ADDRESS_REG,
+  AXIS_Y = Y_ADDRESS_REG,
+  AXIS_Z = Z_ADDREDD_REG
+}axis_t;
+
 //--------------------------------------------------------------------------------------------------------
 // Functions declartions
 //--------------------------------------------------------------------------------------------------------
@@ -104,7 +113,7 @@ FunctionStatus LIS3MDLTR_GetOutputDataRate( struct LIS3MDLTR *self_ptr, data_rat
 FunctionStatus LIS3MDLTR_ChangeInteruptPinStatus( struct LIS3MDLTR *self_ptr, interupt_status_t interupt_status);
 
 //Read the output data of a specific axis
-FunctionStatus LIS3MDLTR_ReadAxis(struct LIS3MDLTR *self_ptr, uint8_t axis_to_read, uint16_t* data_ptr);
+FunctionStatus LIS3MDLTR_ReadAxis(struct LIS3MDLTR *self_ptr, axis_t axis_to_read, uint16_t* data_ptr);
 
 //--------------------------------------------------------------------------------------------------------
 // Function definitions

@@ -39,6 +39,7 @@
 #define       INT_CFG            ((uint8_t)0x30)      //!< Addredd of INT CFG Register for interupt-configuration
 #define       FAST_ODR_POS       ((uint8_t)0x01)      //!< FAST ODR bit position in CTRL REG 1 Register
 
+#define       AXIS_SIZE          ((uint16_t)2)        //!< 2 byte each axis register
 #define       REG_SIZE           ((uint16_t)1)        //!< 1 byte each register
 
 
@@ -180,6 +181,29 @@ FunctionStatus LIS3MDLTR_ChangeInteruptPinStatus( struct LIS3MDLTR *self_ptr, in
   new_interupt_status |= (interupt_status << 1);
 
   i2c_write(self_ptr->device_id, INT_CFG, &new_interupt_status, REG_SIZE);
+
+  return FUNCTION_STATUS_OK;
+}
+
+FunctionStatus LIS3MDLTR_ReadAxis(struct LIS3MDLTR *self_ptr, axis_t axis_to_read, uint16_t* data_ptr){
+
+  if (self_ptr == NULL){
+    return FUNCTION_STATUS_ARGUMENT_ERROR;
+  }
+
+  if (self_ptr->initialization == false){
+    return FUNCTION_STATUS_DEVICE_NOT_INTIALIZED;
+  }
+
+  if (axis_to_read > AXIS_Z || axis_to_read < AXIS_X){
+    return FUNCTION_STATUS_BOUNDARY_ERROR;
+  }
+
+  uint8_t buffer[2];
+
+  i2c_read(self_ptr->device_id, axis_to_read, buffer, AXIS_SIZE);
+  
+  *data_ptr = (uint16_t)((buffer[1] << 8) | buffer[0]);
 
   return FUNCTION_STATUS_OK;
 }
