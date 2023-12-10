@@ -50,8 +50,16 @@ struct LIS3MDLTR{
 typedef enum FunctionStatus{
   FUNCTION_STATUS_OK = 0,
   FUNCTION_STATUS_ARGUMENT_ERROR,
+  FUNCTION_STATUS_DEVICE_NOT_INTIALIZED,
   FUNCTION_STATUS_ERROR
 }FunctionStatus;
+
+typedef enum full_scale_t {
+  SCLAE_4G = 0x00,                      //!< +/-4 gauss scale
+  SCLAE_8G = 0x01,                      //!< +/-8 gauss scale
+  SCALE_12G = 0x02,                     //!< +/-12 gauss scale
+  SCALE_16G = 0x03                      //!< +/-16 gauss scale
+}full_scale_t;
 
 //--------------------------------------------------------------------------------------------------------
 // Functions declartions

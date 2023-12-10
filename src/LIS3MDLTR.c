@@ -33,7 +33,9 @@
 //--------------------------------------------------------------------------------------------------------
 // Constant and macro definitions
 //--------------------------------------------------------------------------------------------------------
+#define       CTRL_REG_2         ((uint8_t)0x21)      //!< Address of CTRL REG 2 Register for full-scale
 
+#define       REG_SIZE           ((uint16_t)1)        //!< 1 byte each register
 
 //--------------------------------------------------------------------------------------------------------
 // Type definitions
@@ -65,3 +67,21 @@ FunctionStatus LIS3MDLTR_Constructor(struct LIS3MDLTR *self_ptr, uint8_t devise_
   return FUNCTION_STATUS_OK;
 }
 
+
+FunctionStatus LIS3MDLTR_GetFullScaleConfig(struct LIS3MDLTR *self_ptr, full_scale_t* fullscale){
+  
+  if (self_ptr == NULL){
+    return FUNCTION_STATUS_ARGUMENT_ERROR;
+  }
+
+  if (self_ptr->initialization == false){
+    return FUNCTION_STATUS_DEVICE_NOT_INTIALIZED;
+  }
+
+  uint8_t buffer;
+  i2c_read(self_ptr->device_id, CTRL_REG_2, &buffer, REG_SIZE);
+
+  *fullscale = (full_scale_t)( MASK_FULLSCALE(buffer) >> 5);
+  
+  return FUNCTION_STATUS_OK;
+}
