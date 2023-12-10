@@ -34,6 +34,7 @@
 // Constant and macro definitions
 //--------------------------------------------------------------------------------------------------------
 
+#define       DEFAULT_ADDRESS    ((uint8_t)0x3d)      //!< Default bus address
 
 //--------------------------------------------------------------------------------------------------------
 // Type definitions
@@ -48,6 +49,7 @@ struct LIS3MDLTR{
 //Function status for error handeling
 typedef enum FunctionStatus{
   FUNCTION_STATUS_OK = 0,
+  FUNCTION_STATUS_ARGUMENT_ERROR,
   FUNCTION_STATUS_ERROR
 }FunctionStatus;
 

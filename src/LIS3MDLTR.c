@@ -22,10 +22,13 @@
 
 // Compiler Includes
 // All include files that are provided by the compiler directly
+#include <stdio.h>
+#include <stdint.h>
+#include <stdbool.h>
 
 //Project Includes
 //All include files that are provided by the project
-
+#include "LIS3MDLTR.h"
 
 //--------------------------------------------------------------------------------------------------------
 // Constant and macro definitions
@@ -45,4 +48,20 @@
 //--------------------------------------------------------------------------------------------------------
 // Function definitions
 //--------------------------------------------------------------------------------------------------------
+
+FunctionStatus LIS3MDLTR_Constructor(struct LIS3MDLTR *self_ptr, uint8_t devise_id){
+  if (self_ptr == NULL){
+    return FUNCTION_STATUS_ARGUMENT_ERROR;
+  }
+
+  if ( devise_id != 0){
+    self_ptr->device_id = devise_id;
+  }else{
+    self_ptr->device_id = DEFAULT_ADDRESS;
+  }
+
+  self_ptr->initialization = true;
+
+  return FUNCTION_STATUS_OK;
+}
 
