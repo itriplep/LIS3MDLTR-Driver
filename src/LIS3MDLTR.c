@@ -19,12 +19,11 @@
 //--------------------------------------------------------------------------------------------------------
 // Include files
 //--------------------------------------------------------------------------------------------------------
-
 // Compiler Includes
 // All include files that are provided by the compiler directly
-#include <stdio.h>
-#include <stdint.h>
-#include <stdbool.h>
+#include <stdint.h>                     //!< include to use integer types 
+#include <stdbool.h>                    //!< include to use standard boolean
+#include <stdio.h>                      //!< include to ise standard io stream for c
 
 //Project Includes
 //All include files that are provided by the project
@@ -34,6 +33,7 @@
 //--------------------------------------------------------------------------------------------------------
 // Constant and macro definitions
 //--------------------------------------------------------------------------------------------------------
+
 #define       CTRL_REG_1         ((uint8_t)0x20)      //!< Address of CTRL REG 1 Register for data rate
 #define       CTRL_REG_2         ((uint8_t)0x21)      //!< Address of CTRL REG 2 Register for full-scale
 #define       INT_CFG            ((uint8_t)0x30)      //!< Addredd of INT CFG Register for interupt-configuration
@@ -41,7 +41,6 @@
 
 #define       AXIS_SIZE          ((uint16_t)2)        //!< 2 byte each axis register
 #define       REG_SIZE           ((uint16_t)1)        //!< 1 byte each register
-
 
 #define SET_BIT(reg , bit) ( (reg) |= ( 1 << (bit) ) )
 #define CLEAR_BIT(reg , bit) ( (reg) &= ~( 1 << (bit) ) )
@@ -52,14 +51,6 @@
 #define MASK_RATE_OM(reg) (reg & 0b01100000)
 #define MASK_RATE_DO(reg) (reg & 0b00011100)
 #define MASK_FULLSCALE(reg) (reg & 0b01100000)
-//--------------------------------------------------------------------------------------------------------
-// Type definitions
-//--------------------------------------------------------------------------------------------------------
-
-
-//--------------------------------------------------------------------------------------------------------
-// Functions declartions
-//--------------------------------------------------------------------------------------------------------
 
 
 //--------------------------------------------------------------------------------------------------------
@@ -93,11 +84,15 @@ FunctionStatus LIS3MDLTR_GetFullScaleConfig(struct LIS3MDLTR *self_ptr, full_sca
     return FUNCTION_STATUS_DEVICE_NOT_INTIALIZED;
   }
 
-  uint8_t buffer;
+  uint8_t buffer=0;
   i2c_read(self_ptr->device_id, CTRL_REG_2, &buffer, REG_SIZE);
 
+//  printf("newState = %d\n", buffer);
+
   *fullscale = (full_scale_t)( MASK_FULLSCALE(buffer) >> 5);
-  
+
+//  printf("fullscale = %d\n", *fullscale);
+
   return FUNCTION_STATUS_OK;
 }
 
@@ -111,7 +106,7 @@ FunctionStatus LIS3MDLTR_ChangeOutputDataRate( struct LIS3MDLTR *self_ptr, data_
     return FUNCTION_STATUS_DEVICE_NOT_INTIALIZED;
   }
 
-  if (rate < RATE_0_625 && rate >= RATE_ENUM_END){
+  if (rate < RATE_0_625 || rate >= RATE_ENUM_END){
     return FUNCTION_STATUS_BOUNDARY_ERROR;
   }
 
@@ -121,19 +116,21 @@ FunctionStatus LIS3MDLTR_ChangeOutputDataRate( struct LIS3MDLTR *self_ptr, data_
 
   new_rate = MASK_RATE(current_rate);
 
-  if ( rate >= RATE_0_625 && rate < RATE_LP){
+  if ( (rate < RATE_LP) && (rate >= RATE_0_625) ){
+
     new_rate |= (rate << 2);
   }else{
     new_rate |= ( (rate-RATE_LP) << 5 );
     SET_BIT(new_rate,FAST_ODR_POS);
   }
 
-  printf("newState = %d\n", new_rate);
+  //printf("newState = %d\n", new_rate);
 
   i2c_write(self_ptr->device_id, CTRL_REG_1, &new_rate, REG_SIZE);
 
   return FUNCTION_STATUS_OK;
 }
+
 
 FunctionStatus LIS3MDLTR_GetOutputDataRate( struct LIS3MDLTR *self_ptr, data_rate_t* datarate){
 
@@ -154,9 +151,11 @@ FunctionStatus LIS3MDLTR_GetOutputDataRate( struct LIS3MDLTR *self_ptr, data_rat
   }else{
     *datarate = ( MASK_RATE_DO(buffer) >> 2 );
   }
+  //printf("datarate = %d\n", *datarate);
 
   return FUNCTION_STATUS_OK;
 }
+
 
 FunctionStatus LIS3MDLTR_ChangeInteruptPinStatus( struct LIS3MDLTR *self_ptr, interupt_status_t interupt_status){
   
@@ -178,12 +177,15 @@ FunctionStatus LIS3MDLTR_ChangeInteruptPinStatus( struct LIS3MDLTR *self_ptr, in
 
   new_interupt_status = MASK_INTERUPT(current_interupt_status);
 
-  new_interupt_status |= (interupt_status << 1);
+  new_interupt_status |= interupt_status ;
+
+  //printf("newState = %d\n", new_interupt_status);
 
   i2c_write(self_ptr->device_id, INT_CFG, &new_interupt_status, REG_SIZE);
 
   return FUNCTION_STATUS_OK;
 }
+
 
 FunctionStatus LIS3MDLTR_ReadAxis(struct LIS3MDLTR *self_ptr, axis_t axis_to_read, uint16_t* data_ptr){
 
@@ -199,11 +201,13 @@ FunctionStatus LIS3MDLTR_ReadAxis(struct LIS3MDLTR *self_ptr, axis_t axis_to_rea
     return FUNCTION_STATUS_BOUNDARY_ERROR;
   }
 
-  uint8_t buffer[2];
+  uint8_t buffer[2] = {0,0};
 
   i2c_read(self_ptr->device_id, axis_to_read, buffer, AXIS_SIZE);
   
   *data_ptr = (uint16_t)((buffer[1] << 8) | buffer[0]);
+
+  //printf("AxisData = %d\n", *data_ptr);
 
   return FUNCTION_STATUS_OK;
 }

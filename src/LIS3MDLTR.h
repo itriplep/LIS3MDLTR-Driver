@@ -16,15 +16,16 @@
 // -------------------------------------------------------------------------------------------------------
 
 
+#ifndef INC_LIS3MDLTR_H_
+#define INC_LIS3MDLTR_H_
+
 //--------------------------------------------------------------------------------------------------------
 // Include files
 //--------------------------------------------------------------------------------------------------------
-
 // Compiler Includes
 // All include files that are provided by the compiler directly
-#include <stdio.h>
-#include <stdint.h>
-#include <stdbool.h>
+#include <stdint.h>                     //!< include to use integer types 
+#include <stdbool.h>                    //!< include to use standard boolean
 
 //Project Includes
 //All include files that are provided by the project
@@ -33,6 +34,7 @@
 //--------------------------------------------------------------------------------------------------------
 // Constant and macro definitions
 //--------------------------------------------------------------------------------------------------------
+
 #define       X_ADDRESS_REG      ((uint8_t)0x28)      //!< Address of X register
 #define       Y_ADDRESS_REG      ((uint8_t)0x2A)      //!< Address of Y register
 #define       Z_ADDREDD_REG      ((uint8_t)0x2C)      //!< Address of Z register
@@ -43,14 +45,13 @@
 // Type definitions
 //--------------------------------------------------------------------------------------------------------
 
-//structure pf LIS3MDLTR sensor
+
 struct LIS3MDLTR{
   bool initialization;
   uint8_t device_id; //buss_address of sensor
 };
 
-//Function status for error handeling
-typedef enum FunctionStatus{
+typedef enum {
   FUNCTION_STATUS_OK = 0,
   FUNCTION_STATUS_ARGUMENT_ERROR,
   FUNCTION_STATUS_DEVICE_NOT_INTIALIZED,
@@ -58,14 +59,15 @@ typedef enum FunctionStatus{
   FUNCTION_STATUS_ERROR
 }FunctionStatus;
 
-typedef enum full_scale_t {
+typedef enum {
   SCLAE_4G = 0x00,                      //!< +/-4 gauss scale
   SCLAE_8G = 0x01,                      //!< +/-8 gauss scale
   SCALE_12G = 0x02,                     //!< +/-12 gauss scale
   SCALE_16G = 0x03                      //!< +/-16 gauss scale
 }full_scale_t;
 
-typedef enum data_rate_t {
+
+typedef enum {
   RATE_0_625 = 0,                   //!< Data rate 0.625
   RATE_1_25,                        //!< Data rate 1.25
   RATE_2_5,                         //!< Data rate 2.5
@@ -82,10 +84,12 @@ typedef enum data_rate_t {
   RATE_ENUM_END                     //!< End of data rate
 }data_rate_t;
 
-typedef enum interupt_status_t {
+
+typedef enum  {
   DISABLE = 0,
   ENABLE = 1 
 }interupt_status_t;
+
 
 typedef enum axis_t {
   AXIS_X = X_ADDRESS_REG,
@@ -115,7 +119,4 @@ FunctionStatus LIS3MDLTR_ChangeInteruptPinStatus( struct LIS3MDLTR *self_ptr, in
 //Read the output data of a specific axis
 FunctionStatus LIS3MDLTR_ReadAxis(struct LIS3MDLTR *self_ptr, axis_t axis_to_read, uint16_t* data_ptr);
 
-//--------------------------------------------------------------------------------------------------------
-// Function definitions
-//--------------------------------------------------------------------------------------------------------
-
+#endif
