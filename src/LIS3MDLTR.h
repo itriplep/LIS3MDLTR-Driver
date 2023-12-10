@@ -79,6 +79,11 @@ typedef enum data_rate_t {
   RATE_ENUM_END                     //!< End of data rate
 }data_rate_t;
 
+typedef enum interupt_status_t {
+  DISABLE = 0,
+  ENABLE = 1 
+}interupt_status_t;
+
 //--------------------------------------------------------------------------------------------------------
 // Functions declartions
 //--------------------------------------------------------------------------------------------------------
@@ -96,7 +101,7 @@ FunctionStatus LIS3MDLTR_ChangeOutputDataRate( struct LIS3MDLTR *self_ptr, data_
 FunctionStatus LIS3MDLTR_GetOutputDataRate( struct LIS3MDLTR *self_ptr, data_rate_t* datarate);
 
 //Enable or disable the device’s interrupt pin
-FunctionStatus LIS3MDLTR_ChangeInteruptPinStatus(struct LIS3MDLTR *self_ptr, uint8_t interupt_status);
+FunctionStatus LIS3MDLTR_ChangeInteruptPinStatus( struct LIS3MDLTR *self_ptr, interupt_status_t interupt_status);
 
 //Read the output data of a specific axis
 FunctionStatus LIS3MDLTR_ReadAxis(struct LIS3MDLTR *self_ptr, uint8_t axis_to_read, uint16_t* data_ptr);

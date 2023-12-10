@@ -29,17 +29,28 @@
 //Project Includes
 //All include files that are provided by the project
 #include "LIS3MDLTR.h"
+#include "i2c.h"
 
 //--------------------------------------------------------------------------------------------------------
 // Constant and macro definitions
 //--------------------------------------------------------------------------------------------------------
 #define       CTRL_REG_1         ((uint8_t)0x20)      //!< Address of CTRL REG 1 Register for data rate
 #define       CTRL_REG_2         ((uint8_t)0x21)      //!< Address of CTRL REG 2 Register for full-scale
-
+#define       INT_CFG            ((uint8_t)0x30)      //!< Addredd of INT CFG Register for interupt-configuration
 #define       FAST_ODR_POS       ((uint8_t)0x01)      //!< FAST ODR bit position in CTRL REG 1 Register
 
 #define       REG_SIZE           ((uint16_t)1)        //!< 1 byte each register
 
+
+#define SET_BIT(reg , bit) ( (reg) |= ( 1 << (bit) ) )
+#define CLEAR_BIT(reg , bit) ( (reg) &= ~( 1 << (bit) ) )
+#define CHECK_BIT(reg , bit) ( ( (reg) & (1 << (bit) )) != 0 ? (uint8_t)1 : (uint8_t)0 )
+
+#define MASK_RATE(reg) ( reg & 0b10000001 )
+#define MASK_INTERUPT(reg) (reg & 0b11101110)
+#define MASK_RATE_OM(reg) (reg & 0b01100000)
+#define MASK_RATE_DO(reg) (reg & 0b00011100)
+#define MASK_FULLSCALE(reg) (reg & 0b01100000)
 //--------------------------------------------------------------------------------------------------------
 // Type definitions
 //--------------------------------------------------------------------------------------------------------
@@ -142,6 +153,33 @@ FunctionStatus LIS3MDLTR_GetOutputDataRate( struct LIS3MDLTR *self_ptr, data_rat
   }else{
     *datarate = ( MASK_RATE_DO(buffer) >> 2 );
   }
+
+  return FUNCTION_STATUS_OK;
+}
+
+FunctionStatus LIS3MDLTR_ChangeInteruptPinStatus( struct LIS3MDLTR *self_ptr, interupt_status_t interupt_status){
+  
+  if (self_ptr == NULL){
+    return FUNCTION_STATUS_ARGUMENT_ERROR;
+  }
+
+  if (self_ptr->initialization == false){
+    return FUNCTION_STATUS_DEVICE_NOT_INTIALIZED;
+  }
+
+  if ( !(interupt_status == ENABLE ||  interupt_status == DISABLE) ){
+    return FUNCTION_STATUS_BOUNDARY_ERROR;
+  }
+
+  uint8_t current_interupt_status = 0 , new_interupt_status = 0;
+
+  i2c_read(self_ptr->device_id, INT_CFG, &current_interupt_status, REG_SIZE);
+
+  new_interupt_status = MASK_INTERUPT(current_interupt_status);
+
+  new_interupt_status |= (interupt_status << 1);
+
+  i2c_write(self_ptr->device_id, INT_CFG, &new_interupt_status, REG_SIZE);
 
   return FUNCTION_STATUS_OK;
 }
