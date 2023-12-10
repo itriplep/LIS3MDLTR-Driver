@@ -1,0 +1,429 @@
+\hypertarget{group___l_i_s3_m_d_l_t_r}{}\doxysection{LIS3\+MDLTR}
+\label{group___l_i_s3_m_d_l_t_r}\index{LIS3MDLTR@{LIS3MDLTR}}
+
+
+Driver module for \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} 3-\/Axis Magnetometer sensor.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}}
+\begin{DoxyCompactList}\small\item\em Represents the configuration and state of a \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_gaffb57443863fc5e04110a7f64db05ba2}\label{group___l_i_s3_m_d_l_t_r_gaffb57443863fc5e04110a7f64db05ba2}} 
+\#define \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_gaffb57443863fc5e04110a7f64db05ba2}{X\+\_\+\+ADDRESS\+\_\+\+REG}}~((uint8\+\_\+t)0x28)
+\begin{DoxyCompactList}\small\item\em Address of X register. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_ga02c6ab1b2c2445b006012f5c5a18289a}\label{group___l_i_s3_m_d_l_t_r_ga02c6ab1b2c2445b006012f5c5a18289a}} 
+\#define \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ga02c6ab1b2c2445b006012f5c5a18289a}{Y\+\_\+\+ADDRESS\+\_\+\+REG}}~((uint8\+\_\+t)0x2A)
+\begin{DoxyCompactList}\small\item\em Address of Y register. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_gad560d01b588d9ef66cb4c70c14fbfa44}\label{group___l_i_s3_m_d_l_t_r_gad560d01b588d9ef66cb4c70c14fbfa44}} 
+\#define \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_gad560d01b588d9ef66cb4c70c14fbfa44}{Z\+\_\+\+ADDREDD\+\_\+\+REG}}~((uint8\+\_\+t)0x2C)
+\begin{DoxyCompactList}\small\item\em Address of Z register. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_ga838ee749ec1dfd8d73187bb32e9ec427}\label{group___l_i_s3_m_d_l_t_r_ga838ee749ec1dfd8d73187bb32e9ec427}} 
+\#define \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ga838ee749ec1dfd8d73187bb32e9ec427}{DEFAULT\+\_\+\+ADDRESS}}~((uint8\+\_\+t)0x3d)
+\begin{DoxyCompactList}\small\item\em Default bus address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_ga50c483fdabc26b111e58e12961858b59}\label{group___l_i_s3_m_d_l_t_r_ga50c483fdabc26b111e58e12961858b59}} 
+typedef enum \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ga2f4d043e30be74a6e1b1fad31ac0f575}{Function\+Status}} {\bfseries Function\+Status}
+\item 
+\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_ga98ff5b22d48f1ff20c906a2a6c25d9ff}\label{group___l_i_s3_m_d_l_t_r_ga98ff5b22d48f1ff20c906a2a6c25d9ff}} 
+typedef enum \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_gaa43c6f8a66b193f9e885eef49b6e6a91}{full\+\_\+scale\+\_\+t}} {\bfseries full\+\_\+scale\+\_\+t}
+\item 
+\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_ga137787bfb175ecee952b7d1ac4322e8c}\label{group___l_i_s3_m_d_l_t_r_ga137787bfb175ecee952b7d1ac4322e8c}} 
+typedef enum \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ga5c7d517ef5ef3a88af455c53b34fbdbf}{data\+\_\+rate\+\_\+t}} {\bfseries data\+\_\+rate\+\_\+t}
+\item 
+\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_ga6370af16c6107bb316686000f903c09c}\label{group___l_i_s3_m_d_l_t_r_ga6370af16c6107bb316686000f903c09c}} 
+typedef enum interupt\+\_\+status\+\_\+t {\bfseries interupt\+\_\+status\+\_\+t}
+\item 
+\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_gacb76d3d3a6b8c18a9de793e16e2e0c8d}\label{group___l_i_s3_m_d_l_t_r_gacb76d3d3a6b8c18a9de793e16e2e0c8d}} 
+typedef enum axis\+\_\+t {\bfseries axis\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ga2f4d043e30be74a6e1b1fad31ac0f575}{Function\+Status}} \{ \newline
+{\bfseries FUNCTION\+\_\+\+STATUS\+\_\+\+OK} = 0
+, {\bfseries FUNCTION\+\_\+\+STATUS\+\_\+\+ARGUMENT\+\_\+\+ERROR}
+, {\bfseries FUNCTION\+\_\+\+STATUS\+\_\+\+DEVICE\+\_\+\+NOT\+\_\+\+INTIALIZED}
+, {\bfseries FUNCTION\+\_\+\+STATUS\+\_\+\+BOUNDARY\+\_\+\+ERROR}
+, \newline
+{\bfseries FUNCTION\+\_\+\+STATUS\+\_\+\+ERROR}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration representing the status of a function. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_gaa43c6f8a66b193f9e885eef49b6e6a91}{full\+\_\+scale\+\_\+t}} \{ \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ggaa43c6f8a66b193f9e885eef49b6e6a91a6fb6f9aa0b3ad79d7cad84673ec8b67c}{SCLAE\+\_\+4G}} = 0x00
+, \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ggaa43c6f8a66b193f9e885eef49b6e6a91ae5f4a0a80ff40ee9168da02bbb9da28f}{SCLAE\+\_\+8G}} = 0x01
+, \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ggaa43c6f8a66b193f9e885eef49b6e6a91a2934aa78eb03d60df6b557df103a681c}{SCALE\+\_\+12G}} = 0x02
+, \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ggaa43c6f8a66b193f9e885eef49b6e6a91aa59a7b10d144fa7856686eba1ca6296b}{SCALE\+\_\+16G}} = 0x03
+ \}
+\item 
+enum \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ga5c7d517ef5ef3a88af455c53b34fbdbf}{data\+\_\+rate\+\_\+t}} \{ \newline
+\mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfa62a4e0b95cf17d80d68f53ed6b0653f2}{RATE\+\_\+0\+\_\+625}} = 0
+, \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfa9c08d201a6db6d4118be1438491c738e}{RATE\+\_\+1\+\_\+25}}
+, \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfa79d56549cc7427d137c38ded7aee90d3}{RATE\+\_\+2\+\_\+5}}
+, \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfa349eca2ba7d6930f66d7a8419752a339}{RATE\+\_\+5}}
+, \newline
+\mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfae325b7e366b6da6cb2fa6bf19e2aba3f}{RATE\+\_\+10}}
+, \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfacc487d24ae08592ce6101751ebdef8a2}{RATE\+\_\+20}}
+, \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfa1ef0e44caab480e655790b5a89e71030}{RATE\+\_\+40}}
+, \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfad1a86f2fedbc577756beaf67bf3b082e}{RATE\+\_\+80}}
+, \newline
+\mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfae4d2d19e5ddf745530ac5fcc78505d82}{RATE\+\_\+\+LP}}
+, \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfa139dda045e445d59816cb3133132d590}{RATE\+\_\+\+MP}}
+, \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfadb9950bf3e3e6830e252bcbc8c4d9fb2}{RATE\+\_\+\+HP}}
+, \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfabd41c988938583ce4a32aa142a4d2632}{RATE\+\_\+\+UHP}}
+, \newline
+\mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfa3f8525a2f37c92ab82114975da77dc42}{RATE\+\_\+\+ENUM\+\_\+\+END}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration representing different data rates for a sensor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_ga74b6733417fd60188f6d65a0c9b6c2ed}\label{group___l_i_s3_m_d_l_t_r_ga74b6733417fd60188f6d65a0c9b6c2ed}} 
+enum {\bfseries interupt\+\_\+status\+\_\+t} \{ {\bfseries DISABLE} = 0
+, {\bfseries ENABLE} = 1
+ \}
+\item 
+\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_gae7747145441b0591a5c04f20f6f9189a}\label{group___l_i_s3_m_d_l_t_r_gae7747145441b0591a5c04f20f6f9189a}} 
+enum {\bfseries axis\+\_\+t} \{ {\bfseries AXIS\+\_\+X} = X\+\_\+\+ADDRESS\+\_\+\+REG
+, {\bfseries AXIS\+\_\+Y} = Y\+\_\+\+ADDRESS\+\_\+\+REG
+, {\bfseries AXIS\+\_\+Z} = Z\+\_\+\+ADDREDD\+\_\+\+REG
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ga2f4d043e30be74a6e1b1fad31ac0f575}{Function\+Status}} \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ga66987b723d5969ba185f3258b2f468d8}{LIS3\+MDLTR\+\_\+\+Constructor}} (struct \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} $\ast$self\+\_\+ptr, uint8\+\_\+t devise\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Initializes the \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} sensor object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ga2f4d043e30be74a6e1b1fad31ac0f575}{Function\+Status}} \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ga906af63dc1b3ec73c95c93981946ea85}{LIS3\+MDLTR\+\_\+\+Get\+Full\+Scale\+Config}} (struct \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} $\ast$self\+\_\+ptr, \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_gaa43c6f8a66b193f9e885eef49b6e6a91}{full\+\_\+scale\+\_\+t}} $\ast$fullscale)
+\begin{DoxyCompactList}\small\item\em Gets the full-\/scale configuration setting from the \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} sensor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ga2f4d043e30be74a6e1b1fad31ac0f575}{Function\+Status}} \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ga931f9bfd95cfd123ae700d17e466bdb2}{LIS3\+MDLTR\+\_\+\+Change\+Output\+Data\+Rate}} (struct \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} $\ast$self\+\_\+ptr, \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ga5c7d517ef5ef3a88af455c53b34fbdbf}{data\+\_\+rate\+\_\+t}} rate)
+\begin{DoxyCompactList}\small\item\em Changes the output data rate setting on the \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} sensor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ga2f4d043e30be74a6e1b1fad31ac0f575}{Function\+Status}} \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_gaabdebe348e07f539b9d54032d342c704}{LIS3\+MDLTR\+\_\+\+Get\+Output\+Data\+Rate}} (struct \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} $\ast$self\+\_\+ptr, \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ga5c7d517ef5ef3a88af455c53b34fbdbf}{data\+\_\+rate\+\_\+t}} $\ast$datarate)
+\begin{DoxyCompactList}\small\item\em Gets the output data rate setting from the \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} sensor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ga2f4d043e30be74a6e1b1fad31ac0f575}{Function\+Status}} \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_gac5dd3539c72d0ee85c22b29d39ed78a5}{LIS3\+MDLTR\+\_\+\+Change\+Interupt\+Pin\+Status}} (struct \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} $\ast$self\+\_\+ptr, interupt\+\_\+status\+\_\+t intrupt\+\_\+status)
+\begin{DoxyCompactList}\small\item\em Changes the status of the interrupt pin on the \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} sensor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ga2f4d043e30be74a6e1b1fad31ac0f575}{Function\+Status}} \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_gaeb711f1481050ec140fdfd7deaf7a4a5}{LIS3\+MDLTR\+\_\+\+Read\+Axis}} (struct \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} $\ast$self\+\_\+ptr, axis\+\_\+t axis\+\_\+to\+\_\+read, uint16\+\_\+t $\ast$data\+\_\+ptr)
+\begin{DoxyCompactList}\small\item\em Reads magnetic field data for a specified axis from the \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Driver module for \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} 3-\/Axis Magnetometer sensor. 
+
+\begin{DoxyAuthor}{Author}
+\+: Parvin Parsa 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+\+: 10.\+Dec.\+2023 Github \+: itriplep \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} implementation
+\end{DoxyDate}
+This is the driver module for \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} 3-\/Axis magnetometer sensor It uses the I2C communication to get 3-\/Axis and Also get/set registers of sensors. 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_ga5c7d517ef5ef3a88af455c53b34fbdbf}\label{group___l_i_s3_m_d_l_t_r_ga5c7d517ef5ef3a88af455c53b34fbdbf}} 
+\index{LIS3MDLTR@{LIS3MDLTR}!data\_rate\_t@{data\_rate\_t}}
+\index{data\_rate\_t@{data\_rate\_t}!LIS3MDLTR@{LIS3MDLTR}}
+\doxysubsubsection{\texorpdfstring{data\_rate\_t}{data\_rate\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ga5c7d517ef5ef3a88af455c53b34fbdbf}{data\+\_\+rate\+\_\+t}}}
+
+
+
+Enumeration representing different data rates for a sensor. 
+
+This enumeration defines various data rates ranging from 0.\+625 to 1000 Hz, with additional symbolic values for specific rates (LP, MP, HP, UHP). RATE\+\_\+\+ENUM\+\_\+\+END is included to mark the end of the data rate enumeration. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RATE\_0\_625@{RATE\_0\_625}!LIS3MDLTR@{LIS3MDLTR}}\index{LIS3MDLTR@{LIS3MDLTR}!RATE\_0\_625@{RATE\_0\_625}}}\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfa62a4e0b95cf17d80d68f53ed6b0653f2}\label{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfa62a4e0b95cf17d80d68f53ed6b0653f2}} 
+RATE\+\_\+0\+\_\+625&Data rate 0.\+625. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RATE\_1\_25@{RATE\_1\_25}!LIS3MDLTR@{LIS3MDLTR}}\index{LIS3MDLTR@{LIS3MDLTR}!RATE\_1\_25@{RATE\_1\_25}}}\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfa9c08d201a6db6d4118be1438491c738e}\label{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfa9c08d201a6db6d4118be1438491c738e}} 
+RATE\+\_\+1\+\_\+25&Data rate 1.\+25. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RATE\_2\_5@{RATE\_2\_5}!LIS3MDLTR@{LIS3MDLTR}}\index{LIS3MDLTR@{LIS3MDLTR}!RATE\_2\_5@{RATE\_2\_5}}}\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfa79d56549cc7427d137c38ded7aee90d3}\label{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfa79d56549cc7427d137c38ded7aee90d3}} 
+RATE\+\_\+2\+\_\+5&Data rate 2.\+5. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RATE\_5@{RATE\_5}!LIS3MDLTR@{LIS3MDLTR}}\index{LIS3MDLTR@{LIS3MDLTR}!RATE\_5@{RATE\_5}}}\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfa349eca2ba7d6930f66d7a8419752a339}\label{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfa349eca2ba7d6930f66d7a8419752a339}} 
+RATE\+\_\+5&Data rate 5. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RATE\_10@{RATE\_10}!LIS3MDLTR@{LIS3MDLTR}}\index{LIS3MDLTR@{LIS3MDLTR}!RATE\_10@{RATE\_10}}}\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfae325b7e366b6da6cb2fa6bf19e2aba3f}\label{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfae325b7e366b6da6cb2fa6bf19e2aba3f}} 
+RATE\+\_\+10&Data rate 10. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RATE\_20@{RATE\_20}!LIS3MDLTR@{LIS3MDLTR}}\index{LIS3MDLTR@{LIS3MDLTR}!RATE\_20@{RATE\_20}}}\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfacc487d24ae08592ce6101751ebdef8a2}\label{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfacc487d24ae08592ce6101751ebdef8a2}} 
+RATE\+\_\+20&Data rate 20. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RATE\_40@{RATE\_40}!LIS3MDLTR@{LIS3MDLTR}}\index{LIS3MDLTR@{LIS3MDLTR}!RATE\_40@{RATE\_40}}}\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfa1ef0e44caab480e655790b5a89e71030}\label{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfa1ef0e44caab480e655790b5a89e71030}} 
+RATE\+\_\+40&Data rate 40. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RATE\_80@{RATE\_80}!LIS3MDLTR@{LIS3MDLTR}}\index{LIS3MDLTR@{LIS3MDLTR}!RATE\_80@{RATE\_80}}}\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfad1a86f2fedbc577756beaf67bf3b082e}\label{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfad1a86f2fedbc577756beaf67bf3b082e}} 
+RATE\+\_\+80&Data rate 80. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RATE\_LP@{RATE\_LP}!LIS3MDLTR@{LIS3MDLTR}}\index{LIS3MDLTR@{LIS3MDLTR}!RATE\_LP@{RATE\_LP}}}\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfae4d2d19e5ddf745530ac5fcc78505d82}\label{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfae4d2d19e5ddf745530ac5fcc78505d82}} 
+RATE\+\_\+\+LP&Data rate 1000. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RATE\_MP@{RATE\_MP}!LIS3MDLTR@{LIS3MDLTR}}\index{LIS3MDLTR@{LIS3MDLTR}!RATE\_MP@{RATE\_MP}}}\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfa139dda045e445d59816cb3133132d590}\label{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfa139dda045e445d59816cb3133132d590}} 
+RATE\+\_\+\+MP&Data rate 560. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RATE\_HP@{RATE\_HP}!LIS3MDLTR@{LIS3MDLTR}}\index{LIS3MDLTR@{LIS3MDLTR}!RATE\_HP@{RATE\_HP}}}\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfadb9950bf3e3e6830e252bcbc8c4d9fb2}\label{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfadb9950bf3e3e6830e252bcbc8c4d9fb2}} 
+RATE\+\_\+\+HP&Data rate 300. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RATE\_UHP@{RATE\_UHP}!LIS3MDLTR@{LIS3MDLTR}}\index{LIS3MDLTR@{LIS3MDLTR}!RATE\_UHP@{RATE\_UHP}}}\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfabd41c988938583ce4a32aa142a4d2632}\label{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfabd41c988938583ce4a32aa142a4d2632}} 
+RATE\+\_\+\+UHP&Data rate 155. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RATE\_ENUM\_END@{RATE\_ENUM\_END}!LIS3MDLTR@{LIS3MDLTR}}\index{LIS3MDLTR@{LIS3MDLTR}!RATE\_ENUM\_END@{RATE\_ENUM\_END}}}\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfa3f8525a2f37c92ab82114975da77dc42}\label{group___l_i_s3_m_d_l_t_r_gga5c7d517ef5ef3a88af455c53b34fbdbfa3f8525a2f37c92ab82114975da77dc42}} 
+RATE\+\_\+\+ENUM\+\_\+\+END&End of data rate. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 110 of file LIS3\+MDLTR.\+h.
+
+\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_gaa43c6f8a66b193f9e885eef49b6e6a91}\label{group___l_i_s3_m_d_l_t_r_gaa43c6f8a66b193f9e885eef49b6e6a91}} 
+\index{LIS3MDLTR@{LIS3MDLTR}!full\_scale\_t@{full\_scale\_t}}
+\index{full\_scale\_t@{full\_scale\_t}!LIS3MDLTR@{LIS3MDLTR}}
+\doxysubsubsection{\texorpdfstring{full\_scale\_t}{full\_scale\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_gaa43c6f8a66b193f9e885eef49b6e6a91}{full\+\_\+scale\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SCLAE\_4G@{SCLAE\_4G}!LIS3MDLTR@{LIS3MDLTR}}\index{LIS3MDLTR@{LIS3MDLTR}!SCLAE\_4G@{SCLAE\_4G}}}\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_ggaa43c6f8a66b193f9e885eef49b6e6a91a6fb6f9aa0b3ad79d7cad84673ec8b67c}\label{group___l_i_s3_m_d_l_t_r_ggaa43c6f8a66b193f9e885eef49b6e6a91a6fb6f9aa0b3ad79d7cad84673ec8b67c}} 
+SCLAE\+\_\+4G&+/-\/4 gauss scale \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SCLAE\_8G@{SCLAE\_8G}!LIS3MDLTR@{LIS3MDLTR}}\index{LIS3MDLTR@{LIS3MDLTR}!SCLAE\_8G@{SCLAE\_8G}}}\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_ggaa43c6f8a66b193f9e885eef49b6e6a91ae5f4a0a80ff40ee9168da02bbb9da28f}\label{group___l_i_s3_m_d_l_t_r_ggaa43c6f8a66b193f9e885eef49b6e6a91ae5f4a0a80ff40ee9168da02bbb9da28f}} 
+SCLAE\+\_\+8G&+/-\/8 gauss scale \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SCALE\_12G@{SCALE\_12G}!LIS3MDLTR@{LIS3MDLTR}}\index{LIS3MDLTR@{LIS3MDLTR}!SCALE\_12G@{SCALE\_12G}}}\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_ggaa43c6f8a66b193f9e885eef49b6e6a91a2934aa78eb03d60df6b557df103a681c}\label{group___l_i_s3_m_d_l_t_r_ggaa43c6f8a66b193f9e885eef49b6e6a91a2934aa78eb03d60df6b557df103a681c}} 
+SCALE\+\_\+12G&+/-\/12 gauss scale \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SCALE\_16G@{SCALE\_16G}!LIS3MDLTR@{LIS3MDLTR}}\index{LIS3MDLTR@{LIS3MDLTR}!SCALE\_16G@{SCALE\_16G}}}\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_ggaa43c6f8a66b193f9e885eef49b6e6a91aa59a7b10d144fa7856686eba1ca6296b}\label{group___l_i_s3_m_d_l_t_r_ggaa43c6f8a66b193f9e885eef49b6e6a91aa59a7b10d144fa7856686eba1ca6296b}} 
+SCALE\+\_\+16G&+/-\/16 gauss scale \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 95 of file LIS3\+MDLTR.\+h.
+
+\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_ga2f4d043e30be74a6e1b1fad31ac0f575}\label{group___l_i_s3_m_d_l_t_r_ga2f4d043e30be74a6e1b1fad31ac0f575}} 
+\index{LIS3MDLTR@{LIS3MDLTR}!FunctionStatus@{FunctionStatus}}
+\index{FunctionStatus@{FunctionStatus}!LIS3MDLTR@{LIS3MDLTR}}
+\doxysubsubsection{\texorpdfstring{FunctionStatus}{FunctionStatus}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ga2f4d043e30be74a6e1b1fad31ac0f575}{Function\+Status}}}
+
+
+
+Enumeration representing the status of a function. 
+
+This enumeration defines different status codes that a function may return, including success (OK), argument error, uninitialized device, boundry error, and general error. 
+
+Definition at line 81 of file LIS3\+MDLTR.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_gac5dd3539c72d0ee85c22b29d39ed78a5}\label{group___l_i_s3_m_d_l_t_r_gac5dd3539c72d0ee85c22b29d39ed78a5}} 
+\index{LIS3MDLTR@{LIS3MDLTR}!LIS3MDLTR\_ChangeInteruptPinStatus@{LIS3MDLTR\_ChangeInteruptPinStatus}}
+\index{LIS3MDLTR\_ChangeInteruptPinStatus@{LIS3MDLTR\_ChangeInteruptPinStatus}!LIS3MDLTR@{LIS3MDLTR}}
+\doxysubsubsection{\texorpdfstring{LIS3MDLTR\_ChangeInteruptPinStatus()}{LIS3MDLTR\_ChangeInteruptPinStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ga2f4d043e30be74a6e1b1fad31ac0f575}{Function\+Status}} LIS3\+MDLTR\+\_\+\+Change\+Interupt\+Pin\+Status (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} $\ast$}]{self\+\_\+ptr,  }\item[{interupt\+\_\+status\+\_\+t}]{intrupt\+\_\+status }\end{DoxyParamCaption})}
+
+
+
+Changes the status of the interrupt pin on the \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} sensor. 
+
+LIS3\+MDLTR\+\_\+\+Change\+Intrupt\+Pin\+Status
+
+Detailed Description
+
+
+\begin{DoxyParams}{Parameters}
+{\em self\+\_\+ptr} & Pointer to \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} structure to read data from \\
+\hline
+{\em intrupt\+\_\+status} & Desired status of the interrupt pin (ENABLE or DISABLE)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Function\+Status \begin{DoxyItemize}
+\item FUNCTION\+\_\+\+STATUS\+\_\+\+OK if the operation was successful \item FUNCTION\+\_\+\+STATUS\+\_\+\+ARGUMENT\+\_\+\+ERROR if self\+\_\+ptr is NULL \item FUNCTION\+\_\+\+STATUS\+\_\+\+DEVICE\+\_\+\+NOT\+\_\+\+INTIALIZED if the sensor is not initialized \item FUNCTION\+\_\+\+STATUS\+\_\+\+BOUNDARY\+\_\+\+ERROR if intrupt\+\_\+status is not ENABLE or DISABLE\end{DoxyItemize}
+\DoxyHorRuler{0}
+ This function changes the status of the interrupt pin on the \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} sensor. It performs necessary argument checks, reads the current interrupt configuration(from INT\+\_\+\+CFG register), updates the desired status, and writes the new configuration back to the sensor using I2C communication.
+\end{DoxyReturn}
+\DoxyHorRuler{0}
+ 
+
+Definition at line 193 of file LIS3\+MDLTR.\+c.
+
+\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_ga931f9bfd95cfd123ae700d17e466bdb2}\label{group___l_i_s3_m_d_l_t_r_ga931f9bfd95cfd123ae700d17e466bdb2}} 
+\index{LIS3MDLTR@{LIS3MDLTR}!LIS3MDLTR\_ChangeOutputDataRate@{LIS3MDLTR\_ChangeOutputDataRate}}
+\index{LIS3MDLTR\_ChangeOutputDataRate@{LIS3MDLTR\_ChangeOutputDataRate}!LIS3MDLTR@{LIS3MDLTR}}
+\doxysubsubsection{\texorpdfstring{LIS3MDLTR\_ChangeOutputDataRate()}{LIS3MDLTR\_ChangeOutputDataRate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ga2f4d043e30be74a6e1b1fad31ac0f575}{Function\+Status}} LIS3\+MDLTR\+\_\+\+Change\+Output\+Data\+Rate (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} $\ast$}]{self\+\_\+ptr,  }\item[{\mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ga5c7d517ef5ef3a88af455c53b34fbdbf}{data\+\_\+rate\+\_\+t}}}]{rate }\end{DoxyParamCaption})}
+
+
+
+Changes the output data rate setting on the \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} sensor. 
+
+LIS3\+MDLTR\+\_\+\+Change\+Output\+Data\+Rate
+
+Detailed Description
+
+
+\begin{DoxyParams}{Parameters}
+{\em self\+\_\+ptr} & Pointer to \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} structure to read data from \\
+\hline
+{\em rate} & Desired data rate setting (data\+\_\+rate\+\_\+t enum)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Function\+Status \begin{DoxyItemize}
+\item FUNCTION\+\_\+\+STATUS\+\_\+\+OK if the operation was successful \item FUNCTION\+\_\+\+STATUS\+\_\+\+ARGUMENT\+\_\+\+ERROR if self\+\_\+ptr is NULL \item FUNCTION\+\_\+\+STATUS\+\_\+\+DEVICE\+\_\+\+NOT\+\_\+\+INTIALIZED if the sensor is not initialized \item FUNCTION\+\_\+\+STATUS\+\_\+\+BOUNDARY\+\_\+\+ERROR if the rate is out of bounds\end{DoxyItemize}
+\DoxyHorRuler{0}
+ This function changes the output data rate setting on the \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} sensor. It performs necessary argument checks, reads the current rate configuration(from CTRL\+\_\+\+REG1 register), updates the desired rate, and writes the new configuration back to the sensor using I2C communication. The new rate is determined based on the provided rate parameter and sensor configuration.
+\end{DoxyReturn}
+\DoxyHorRuler{0}
+ 
+
+Definition at line 132 of file LIS3\+MDLTR.\+c.
+
+\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_ga66987b723d5969ba185f3258b2f468d8}\label{group___l_i_s3_m_d_l_t_r_ga66987b723d5969ba185f3258b2f468d8}} 
+\index{LIS3MDLTR@{LIS3MDLTR}!LIS3MDLTR\_Constructor@{LIS3MDLTR\_Constructor}}
+\index{LIS3MDLTR\_Constructor@{LIS3MDLTR\_Constructor}!LIS3MDLTR@{LIS3MDLTR}}
+\doxysubsubsection{\texorpdfstring{LIS3MDLTR\_Constructor()}{LIS3MDLTR\_Constructor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ga2f4d043e30be74a6e1b1fad31ac0f575}{Function\+Status}} LIS3\+MDLTR\+\_\+\+Constructor (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} $\ast$}]{self\+\_\+ptr,  }\item[{uint8\+\_\+t}]{devise\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Initializes the \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} sensor object. 
+
+LIS3\+MDLTR\+\_\+\+Constructor
+
+Detailed Description
+
+
+\begin{DoxyParams}{Parameters}
+{\em self\+\_\+ptr} & Pointer to the \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} structure to be initialized \\
+\hline
+{\em device\+\_\+id} & Device identifier for the \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} sensor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Function\+Status \begin{DoxyItemize}
+\item FUNCTION\+\_\+\+STATUS\+\_\+\+OK if the operation was successful \item FUNCTION\+\_\+\+STATUS\+\_\+\+ARGUMENT\+\_\+\+ERROR if self\+\_\+ptr is NULL \item Other error codes can be defined based on the specific implementation\end{DoxyItemize}
+\DoxyHorRuler{0}
+ This function initializes the \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} sensor object. It sets the device identifier, and if a valid device\+\_\+id is provided, it uses it; otherwise, it defaults to the DEFAULT\+\_\+\+ADDRESS. The initialization flag is set to true, indicating that the sensor object has been properly initialized.
+\end{DoxyReturn}
+\DoxyHorRuler{0}
+ 
+
+Definition at line 93 of file LIS3\+MDLTR.\+c.
+
+\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_ga906af63dc1b3ec73c95c93981946ea85}\label{group___l_i_s3_m_d_l_t_r_ga906af63dc1b3ec73c95c93981946ea85}} 
+\index{LIS3MDLTR@{LIS3MDLTR}!LIS3MDLTR\_GetFullScaleConfig@{LIS3MDLTR\_GetFullScaleConfig}}
+\index{LIS3MDLTR\_GetFullScaleConfig@{LIS3MDLTR\_GetFullScaleConfig}!LIS3MDLTR@{LIS3MDLTR}}
+\doxysubsubsection{\texorpdfstring{LIS3MDLTR\_GetFullScaleConfig()}{LIS3MDLTR\_GetFullScaleConfig()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ga2f4d043e30be74a6e1b1fad31ac0f575}{Function\+Status}} LIS3\+MDLTR\+\_\+\+Get\+Full\+Scale\+Config (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} $\ast$}]{self\+\_\+ptr,  }\item[{\mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_gaa43c6f8a66b193f9e885eef49b6e6a91}{full\+\_\+scale\+\_\+t}} $\ast$}]{fullscale }\end{DoxyParamCaption})}
+
+
+
+Gets the full-\/scale configuration setting from the \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} sensor. 
+
+LIS3\+MDLTR\+\_\+\+Get\+Full\+Scale\+Config
+
+Detailed Description
+
+
+\begin{DoxyParams}{Parameters}
+{\em self\+\_\+ptr} & Pointer to the \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} structure to read data from \\
+\hline
+{\em fullscale} & Pointer to a full\+\_\+scale\+\_\+t variable where the full-\/scale setting will be stored\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Function\+Status \begin{DoxyItemize}
+\item FUNCTION\+\_\+\+STATUS\+\_\+\+OK if the operation was successful \item FUNCTION\+\_\+\+STATUS\+\_\+\+ARGUMENT\+\_\+\+ERROR if self\+\_\+ptr is NULL \item FUNCTION\+\_\+\+STATUS\+\_\+\+DEVICE\+\_\+\+NOT\+\_\+\+INTIALIZED if the sensor is not initialized\end{DoxyItemize}
+\DoxyHorRuler{0}
+ This function retrieves the full-\/scale configuration setting from the \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} sensor. It performs necessary argument checks, reads the control register(from CTRL\+\_\+\+REG2 register), and extracts the full-\/scale information based on the sensor\textquotesingle{}s configuration. The result is stored in the provided fullscale variable.
+\end{DoxyReturn}
+\DoxyHorRuler{0}
+ 
+
+Definition at line 110 of file LIS3\+MDLTR.\+c.
+
+\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_gaabdebe348e07f539b9d54032d342c704}\label{group___l_i_s3_m_d_l_t_r_gaabdebe348e07f539b9d54032d342c704}} 
+\index{LIS3MDLTR@{LIS3MDLTR}!LIS3MDLTR\_GetOutputDataRate@{LIS3MDLTR\_GetOutputDataRate}}
+\index{LIS3MDLTR\_GetOutputDataRate@{LIS3MDLTR\_GetOutputDataRate}!LIS3MDLTR@{LIS3MDLTR}}
+\doxysubsubsection{\texorpdfstring{LIS3MDLTR\_GetOutputDataRate()}{LIS3MDLTR\_GetOutputDataRate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ga2f4d043e30be74a6e1b1fad31ac0f575}{Function\+Status}} LIS3\+MDLTR\+\_\+\+Get\+Output\+Data\+Rate (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} $\ast$}]{self\+\_\+ptr,  }\item[{\mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ga5c7d517ef5ef3a88af455c53b34fbdbf}{data\+\_\+rate\+\_\+t}} $\ast$}]{datarate }\end{DoxyParamCaption})}
+
+
+
+Gets the output data rate setting from the \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} sensor. 
+
+LIS3\+MDLTR\+\_\+\+Get\+Output\+Data\+Rate
+
+Detailed Description
+
+
+\begin{DoxyParams}{Parameters}
+{\em self\+\_\+ptr} & Pointer to \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} structure to read data from \\
+\hline
+{\em datarate} & Pointer to a data\+\_\+rate\+\_\+t variable where the data rate setting will be stored\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Function\+Status \begin{DoxyItemize}
+\item FUNCTION\+\_\+\+STATUS\+\_\+\+OK if the operation was successful \item FUNCTION\+\_\+\+STATUS\+\_\+\+ARGUMENT\+\_\+\+ERROR if self\+\_\+ptr is NULL \item FUNCTION\+\_\+\+STATUS\+\_\+\+DEVICE\+\_\+\+NOT\+\_\+\+INTIALIZED if the sensor is not initialized\end{DoxyItemize}
+\DoxyHorRuler{0}
+ This function retrieves the output data rate setting from the \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} sensor. It performs necessary argument checks, reads the control register(from CTRL\+\_\+\+REG1 register), and extracts the data rate information based on the sensor\textquotesingle{}s configuration. The result is stored in the provided datarate variable.
+\end{DoxyReturn}
+\DoxyHorRuler{0}
+ 
+
+Definition at line 168 of file LIS3\+MDLTR.\+c.
+
+\mbox{\Hypertarget{group___l_i_s3_m_d_l_t_r_gaeb711f1481050ec140fdfd7deaf7a4a5}\label{group___l_i_s3_m_d_l_t_r_gaeb711f1481050ec140fdfd7deaf7a4a5}} 
+\index{LIS3MDLTR@{LIS3MDLTR}!LIS3MDLTR\_ReadAxis@{LIS3MDLTR\_ReadAxis}}
+\index{LIS3MDLTR\_ReadAxis@{LIS3MDLTR\_ReadAxis}!LIS3MDLTR@{LIS3MDLTR}}
+\doxysubsubsection{\texorpdfstring{LIS3MDLTR\_ReadAxis()}{LIS3MDLTR\_ReadAxis()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___l_i_s3_m_d_l_t_r_ga2f4d043e30be74a6e1b1fad31ac0f575}{Function\+Status}} LIS3\+MDLTR\+\_\+\+Read\+Axis (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} $\ast$}]{self\+\_\+ptr,  }\item[{axis\+\_\+t}]{axis\+\_\+to\+\_\+read,  }\item[{uint16\+\_\+t $\ast$}]{data\+\_\+ptr }\end{DoxyParamCaption})}
+
+
+
+Reads magnetic field data for a specified axis from the \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} sensor. 
+
+LIS3\+MDLTR\+\_\+\+Read\+Axis
+
+Detailed Description
+
+
+\begin{DoxyParams}{Parameters}
+{\em self\+\_\+ptr} & Pointer to \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} structure to read data from \\
+\hline
+{\em axis\+\_\+to\+\_\+read} & The axis for which data needs to be read (AXIS\+\_\+X, AXIS\+\_\+Y, or AXIS\+\_\+Z) \\
+\hline
+{\em data\+\_\+ptr} & Pointer to a uint16\+\_\+t variable where the read data will be stored\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Function\+Status \begin{DoxyItemize}
+\item FUNCTION\+\_\+\+STATUS\+\_\+\+OK if the operation was successful \item FUNCTION\+\_\+\+STATUS\+\_\+\+ARGUMENT\+\_\+\+ERROR if self\+\_\+ptr is NULL \item FUNCTION\+\_\+\+STATUS\+\_\+\+DEVICE\+\_\+\+NOT\+\_\+\+INTIALIZED if the sensor is not initialized \item FUNCTION\+\_\+\+STATUS\+\_\+\+BOUNDARY\+\_\+\+ERROR if the axis\+\_\+to\+\_\+read is out of bounds (not within AXIS\+\_\+X to AXIS\+\_\+Z)\end{DoxyItemize}
+\DoxyHorRuler{0}
+ This function reads magnetic field data from the \mbox{\hyperlink{struct_l_i_s3_m_d_l_t_r}{LIS3\+MDLTR}} sensor for a specified axis. It performs necessary argument checks, initializes a buffer to store the read data, and reads the data from the sensor using I2C communication. The result is stored in the provided data\+\_\+ptr.
+\end{DoxyReturn}
+\DoxyHorRuler{0}
+ 
+
+Definition at line 223 of file LIS3\+MDLTR.\+c.
+

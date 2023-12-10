@@ -42,10 +42,43 @@
 #define       AXIS_SIZE          ((uint16_t)2)        //!< 2 byte each axis register
 #define       REG_SIZE           ((uint16_t)1)        //!< 1 byte each register
 
+/**
+ * \def SET_BIT(reg, bit)
+ * \brief Macro to set a bit in a register.
+ *
+ * This macro performs a bitwise OR operation to set the specified bit in the given register.
+ */
 #define SET_BIT(reg , bit) ( (reg) |= ( 1 << (bit) ) )
+
+/**
+ * \def CLEAR_BIT(reg, bit)
+ * \brief Macro to clear a bit in a register.
+ *
+ * This macro performs a bitwise AND operation with the complement of the specified bit
+ * to clear the bit in the given register.
+ */
 #define CLEAR_BIT(reg , bit) ( (reg) &= ~( 1 << (bit) ) )
+
+/**
+ * \def CHECK_BIT(reg, bit)
+ * \brief Macro to check if a specific bit is set in a register.
+ *
+ * This macro evaluates to 1 if the specified bit is set in the given register, and 0 otherwise.
+ */
 #define CHECK_BIT(reg , bit) ( ( (reg) & (1 << (bit) )) != 0 ? (uint8_t)1 : (uint8_t)0 )
 
+/**
+ * \brief Macros for masking specific bits in register values.
+ * 
+ * \details These macros are designed to mask and extract specific bits from register values.
+ * 
+ * \macros
+ *   - `MASK_RATE(reg)`: Masks bits for rate configuration.
+ *   - `MASK_INTERUPT(reg)`: Masks bits for interrupt configuration.
+ *   - `MASK_RATE_OM(reg)`: Masks bits for rate over mode configuration.
+ *   - `MASK_RATE_DO(reg)`: Masks bits for data output rate configuration.
+ *   - `MASK_FULLSCALE(reg)`: Masks bits for full-scale configuration.
+ */
 #define MASK_RATE(reg) ( reg & 0b10000001 )
 #define MASK_INTERUPT(reg) (reg & 0b11101110)
 #define MASK_RATE_OM(reg) (reg & 0b01100000)

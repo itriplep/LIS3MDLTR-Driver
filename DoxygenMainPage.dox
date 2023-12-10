@@ -1,0 +1,18 @@
+ /*! \mainpage Home Page
+ *
+ * \section intro_sec Introduction
+ *
+ * This program, written in C, is a driver for LIS3MDLTR - Digital output magnetic sensor (ultralow-power, high-performance 3-axis magnetometer). It follows an object-oriented style and implements a two-layer architecture consisting of HAL (Hardware Abstraction Layer) and PAL (Platform Abstraction Layer). The program utilizes the Unity/Ceedling framework for unit testing.
+ *
+ * This Driver implemented below purposes:
+ *
+ *
+ * 1. Retrieve the device’s full-scale configuration
+ * 
+ * 2. Retrieve and set the device’s output data rate
+ * 
+ * 3. Enable or disable the device’s interrupt pin
+ *
+ * 4. Read the output data of a specific axis
+ *
+ */
