@@ -35,8 +35,12 @@
     - -:test/support
   :source:
     - +:src/**
+    - +:hal/src/**
+    - +:platform/src/**
   :include:
     - +:.
+    - +:hal/inc/**
+    - +:platform/inc/**
   :support:
     - test/support
   :libraries: []

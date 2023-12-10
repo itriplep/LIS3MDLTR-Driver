@@ -1,5 +1,5 @@
-#ifndef TEST
 #define TEST
+#ifdef TEST
 
 #include "unity.h"
 #include "mock_i2c.h"
